@@ -4,10 +4,11 @@ $(document).ready(function() {
     var items = ["item1", "item2","item3", "item4", "item5"];
 
     var groceries = items.map(function(item) {
-        var itemInput = $("input#" + item).val().toUpperCase();
-        $("." + item).text(itemInput);
+        return $("input#" + item).val().toUpperCase();
     });
 
-
-  })
-})
+    groceries.sort().map(function(grocery, index) {
+      $("." + items[index]).text(grocery);
+    });
+  });
+});
